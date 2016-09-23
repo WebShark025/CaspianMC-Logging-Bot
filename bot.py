@@ -40,7 +40,7 @@ def on_user_joins(m):
 			username = m.new_chat_participant.username
 			groupname = m.chat.title
 			groupid = m.chat.id
-			bot.send_message(YOUR DEBUG ID, "# DEBUG # " + "Bot got invited to the group " + str(groupname) + "(" + str(groupid) + ")", parse_mode="HTML")
+			bot.send_message(164017979, "# DEBUG # " + "Bot got invited to the group " + str(groupname) + "(" + str(groupid) + ")", parse_mode="HTML")
 
 
 
@@ -48,25 +48,25 @@ def on_user_joins(m):
 def yes(m):
 	cid = m.chat.id
 	user = m.from_user.first_name
-	bot.send_message(YOUR DEBUG ID, str(user)  + " had Problems in setting up." , parse_mode="Markdown")
+	bot.send_message(164017979, str(user)  + " had Problems in setting up." , parse_mode="Markdown")
 	bot.send_message(cid, "Thank you very much for making our Bot better!")
 	
 @bot.message_handler(commands=['no'])
 def no(m):
 	cid = m.chat.id
 	user = m.from_user.first_name
-	bot.send_message(YOUR DEBUG ID, str(user) + " had no Problems in setting the Bot up." , parse_mode="Markdown")
+	bot.send_message(164017979, str(user) + " had no Problems in setting the Bot up." , parse_mode="Markdown")
 	bot.send_message(cid, "Thank you very much for making our Bot better!")
 
 @bot.message_handler(commands=['credits'])
 def credits(m):
 	cid = m.chat.id
-	bot.send_message(cid, "_Open-source Group Logging Bot_ https://github.com/aRandomStranger/TelegramLoggingBot/ \n*Thank you very much to all of these guys! \nI (@aRandomStranger) really love this projekt! <3* Thanks to:\nEdurolp for helping out with Debugging shit\nGunny, Jack and Edu for supporting users and answer to their questions\n \nAlso thanks to Frank Wang for the wonderfull API!", parse_mode="Markdown")
+	bot.send_message(cid, "_بات لاگ چتهای گروه وبشارک_ \n *صرفا جهت لاگ گرفتن از چت های پاک شده* \n *فورک پراجکت aRandomStranger*", parse_mode="Markdown")
 
 @bot.message_handler(commands=['help'])
 def help(m):
 	cid = m.chat.id
-	bot.send_message(cid, "*Bot Help Page*\n\n/setup - Start setup the Bot in this group\n/setloggingid <Group-ID> - Sets a group ID to log all messages and send it into the group\n/id - Gets the current group-id\n /nobroadcasts - Opts you from Broadcasts out.\nAlso if you like to support our work please rate the bot at https://telegram.me/storebot?start=IchLoggeBot", parse_mode="Markdown")
+	bot.send_message(cid, "*Bot Help Page*\n\n/setup - Start setup the Bot in this group\n/setloggingid <Group-ID> - Sets a group ID to log all messages and send it into the group\n/id - Gets the current group-id\n /nobroadcasts - Opts you from Broadcasts out.", parse_mode="Markdown")
 	
 @bot.message_handler(commands=['setloggingid'])
 def setloginggid(m):
